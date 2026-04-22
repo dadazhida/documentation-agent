@@ -1,3 +1,4 @@
+# app/services/llm_service.py
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
@@ -19,6 +20,6 @@ def call_llm(prompt: str) -> str:
             },
             {"role": "user", "content": prompt},
         ],
-        temperature=0.5,
+        temperature=0.4,
     )
     return response.choices[0].message.content or ""
